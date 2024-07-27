@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load sass_tags %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/flatpickr/flatpickr.min.css' %}">
+{% endblock %}
+    
+{% block content %} 
+
+{% include "applications/ecommerce/components/payment-details.html" %}
+
+{% endblock %}
+
+{% block scriptcontent %}
+
+<script src="{% static 'assets/js/flat-pickr/flatpickr.js' %}"></script>
+<script src="{% static 'assets/js/flat-pickr/custom-flatpickr.js' %}"></script>
+<script src="{% static 'assets/js/tooltip-init.js' %}"></script>
+
+{% endblock %}

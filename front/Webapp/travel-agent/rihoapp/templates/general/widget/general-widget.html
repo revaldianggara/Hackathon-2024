@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load sass_tags %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/vendors/fullcalender.css' %}">
+{% endblock %}
+    
+{% block content %} 
+
+{% include "general/widget/components/general-widget.html" %}
+
+{% endblock %}
+
+{% block scriptcontent %}
+
+<script src="{% static 'assets/js/chart/apex-chart/apex-chart.js' %}"></script>
+<script src="{% static 'assets/js/chart/apex-chart/stock-prices.js' %}"></script>
+<script src="{% static 'assets/js/chart/apex-chart/moment.min.js' %}"></script>
+<script src="{% static 'assets/js/calendar/fullcalender.js' %}"></script>
+<script src="{% static 'assets/js/calendar/custom-calendar.js' %}"></script>
+<script src="{% static 'assets/js/general-widget.js' %}"></script>
+<script src="{% static 'assets/js/height-equal.js' %}"></script>
+    
+{% endblock %}
