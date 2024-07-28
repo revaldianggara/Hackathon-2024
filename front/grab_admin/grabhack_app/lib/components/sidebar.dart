@@ -2,12 +2,23 @@
 
 import 'package:flutter/material.dart';
 import 'custom_list_tile.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart'; // Import WebView
 
 
 class Sidebar extends StatelessWidget {
   final Function(String) onMenuItemSelected;
 
   Sidebar({required this.onMenuItemSelected});
+
+  // Function to launch Gradio interface
+  void launchGradioInterface(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +44,11 @@ class Sidebar extends StatelessWidget {
             CustomListTile(
               icon: Icons.auto_awesome,
               title: 'Create Itinerary with Ease',
-              onTap: () => onMenuItemSelected('Create Itinerary with Ease'),
+              onTap: () => onMenuItemSelected('http://10.14.0.14:8001'),
+              // onTap: () {
+              //   ('<iframe src="http://10.14.0.14:8001"> </iframe>');
+              // }
+              // onTap: () => onMenuItemSelected("https://www.google.com"),
             ),
             CustomListTile(
               icon: Icons.space_dashboard_outlined,
@@ -58,7 +73,22 @@ class Sidebar extends StatelessWidget {
             CustomListTile(
               icon: Icons.admin_panel_settings_outlined,
               title: 'Policies',
-              onTap: () => onMenuItemSelected('Policies'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WebView(
+                      initialUrl: 'http://10.14.0.14:8001',
+                      javascriptMode: JavascriptMode.unrestricted,
+                    ),
+                  ),
+                );
+              }
+              // onTap: () => onMenuItemSelected('<iframe src="http://10.14.0.14:8001"> </iframe>'),
+              // onTap: () {
+              //   ('<iframe src="http://10.14.0.14:8001"> </iframe>');
+              // }
+
             ),
             CustomListTile(
               icon: Icons.payment,

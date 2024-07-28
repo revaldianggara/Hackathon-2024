@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:grabhack_app/components/main_layout.dart';
+import 'components/dashboard.dart'; // Import the Dashboard
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inter',
       ),
-      home: DashboardScreen()
+      home: Dashboard(),
     );
   }
 }
