@@ -103,3 +103,6 @@ flutter run
 https://drive.google.com/file/d/1Y1xKJ3zqDpDj-a9CerfTo8ahfnjOPyWM/view?usp=drive_link
 
 ## Mockup
+![mockup](https://github.com/user-attachments/assets/6e608067-fc63-407a-9233-9ab946e726d9)
+
+
