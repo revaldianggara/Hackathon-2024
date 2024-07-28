@@ -101,6 +101,8 @@ flutter run
 ```
 ## Link Demo
 https://drive.google.com/file/d/1Y1xKJ3zqDpDj-a9CerfTo8ahfnjOPyWM/view?usp=drive_link
+![mockup2](https://github.com/user-attachments/assets/8ca4749d-ca9c-4dd1-a999-cb9cb5d747da)
+
 
 ## Mockup
 ![mockup](https://github.com/user-attachments/assets/6e608067-fc63-407a-9233-9ab946e726d9)
