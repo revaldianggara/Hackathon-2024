@@ -6,6 +6,7 @@
 3. Qdrant
 4. RunPod
 5. Ollama Model
+6. Flutter
 
 ## Rocky Linux prep
 1. installasi c++ builder
@@ -100,3 +101,5 @@ flutter run
 ```
 ## Link Demo
 https://drive.google.com/file/d/1Y1xKJ3zqDpDj-a9CerfTo8ahfnjOPyWM/view?usp=drive_link
+
+## Mockup
