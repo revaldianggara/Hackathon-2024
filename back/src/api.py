@@ -2,26 +2,30 @@
 
 from unsloth import FastLanguageModel
 import torch
+import os
+from dotenv import load_dotenv
+
 max_seq_length = 2048
-dtype = None # None for auto detection. Float16 for Tesla T4, V100, Bfloat16 for Ampere+
-load_in_4bit = True # Use 4bit quantization to reduce memory usage. Can be False.
+dtype = None 
+load_in_4bit = True 
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "unsloth/mistral-7b-bnb-4bit", # "unsloth/mistral-7b" for 16bit loading
+    # model_name = "unsloth/ollama-7b-bnb-4bit",
+     model_name = "unsloth/llama-2-7b-bnb-4bit", 
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
-    token = "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", 
+    token = os.getenv('HF_TOKEN'), 
 )
 
 model = FastLanguageModel.get_peft_model(
     model,
-    r = 16, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+    r = 16, # > 0 ! direkomendasikan 8, 16, 32, 64, 128
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
                       "gate_proj", "up_proj", "down_proj",],
     lora_alpha = 16,
-    lora_dropout = 0, # Currently only supports dropout = 0
-    bias = "none",    # Currently only supports bias = "none"
+    lora_dropout = 0, 
+    bias = "none",  
     use_gradient_checkpointing = True,
     random_state = 3407,
     max_seq_length = max_seq_length,

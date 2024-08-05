@@ -1,0 +1,5 @@
+conf: /var/www/html/hackjakarta/back/log/conf.log
+conn: /var/www/html/hackjakarta/back/log/conn.log
+
+model_path: /var/www/html/hackjakarta/model/list_of_model.bin
+param_path: /var/www/html/hackjakarta/model/list_of_param.pkl
